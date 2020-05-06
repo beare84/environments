@@ -1,6 +1,8 @@
 class profiles::splunkenterprise (
 ) {
 
+  # In the Splunk Web UI you can point 
+
   # The below code changes the admin user's password to 'password'
   # I generated this hash on a splunk enterprise server using:
   # /opt/splunk/bin/splunk hash-passwd password
@@ -20,26 +22,16 @@ class profiles::splunkenterprise (
     action => 'accept',
   }
 
-  firewalld_rich_rule { 'Accept Splunk Enterprise Deployment Clients':
-    ensure => present,
-    zone   => 'public',
-    source => '192.168.1.0/24',
-    port   => {
-      'port'     => 8000,
-      'protocol' => 'tcp',
-    },
-    action => 'accept',
-  }
-
-  firewalld_rich_rule { 'Accept Splunk Enterprise Forwarders':
-    ensure => present,
-    zone   => 'public',
-    source => '192.168.1.0/24',
-    port   => {
-      'port'     => 8000,
-      'protocol' => 'tcp',
-    },
-    action => 'accept',
-  }
+  # Not using forwarder currently
+  # firewalld_rich_rule { 'Accept Splunk Enterprise Forwarders':
+  #   ensure => present,
+  #   zone   => 'public',
+  #   source => '192.168.1.0/24',
+  #   port   => {
+  #     'port'     => 9997,
+  #     'protocol' => 'tcp',
+  #   },
+  #   action => 'accept',
+  # }
 
 }

@@ -31,4 +31,15 @@ class profiles::rsyslogserver (
     },
     action  => 'accept',
   }
+
+  firewalld_rich_rule { 'Accept Rsyslog from home network':
+    ensure => present,
+    zone   => 'public',
+    source => '192.168.1.0/24',
+    port   => {
+      'port'     => 514,
+      'protocol' => 'tcp',
+    },
+    action  => 'accept',
+  }
 }
