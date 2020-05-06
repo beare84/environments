@@ -9,7 +9,7 @@ node 'puppetserver.openstacklocal' {
   include profiles::puppetserver
   include profiles::splunkforwarder
 }
-node 'splunkforwarder.openstacklocal' {
+node 'splunkenterprise.openstacklocal' {
   include profiles::linuxbase
   include profiles::rsyslogclient
   include profiles::splunkenterprise
