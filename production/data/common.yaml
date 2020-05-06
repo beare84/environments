@@ -1,0 +1,6 @@
+# profiles::splunkenterprise::splunk_server_ip: '192.168.102.50'
+# profiles::splunkenterprise::version: '8.0.3'
+# profiles::splunkenterprise::build: 'a6754d8441bf'
+# profiles::splunkenterprise::rooturl: 'puppet:///modules/splunk'
+
+profiles::splunkforwarder::my_splunk_server: '192.168.102.52'
