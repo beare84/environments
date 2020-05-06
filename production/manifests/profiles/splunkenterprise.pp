@@ -1,7 +1,8 @@
 class profiles::splunkenterprise (
 ) {
 
-  # In the Splunk Web UI you can point 
+  # In the Splunk Web UI you can point Splunk to look for logs from a directory.
+  # If the Splunk Enterprise server is also a rsyslog server it can get client logs from here.
 
   # The below code changes the admin user's password to 'password'
   # I generated this hash on a splunk enterprise server using:
