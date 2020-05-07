@@ -10,7 +10,7 @@ class profiles::rsyslogserver (
     enable_tcp                => true,
     enable_udp                => false,
     enable_relp               => false,
-    enable_onefile            => true,
+    enable_onefile            => false,
     relay_server              => false,
     server_dir                => '/srv/log/',
     custom_config             => undef,

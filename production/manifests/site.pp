@@ -13,6 +13,9 @@ node 'splunkenterprise.openstacklocal' {
   include profiles::rsyslogserver
   include profiles::splunkenterprise
 }
+node 'tozza' {
+  include profiles::rsyslogclient
+}
 node 'winagent0.openstacklocal' {
   include profiles::winbase
 }

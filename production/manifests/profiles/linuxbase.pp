@@ -18,4 +18,9 @@ class profiles::linuxbase (
     service => 'ssh',
     action  => 'accept',
   }
+
+  class { selinux:
+    mode => 'enforcing',
+    type => 'targeted',
+  }
 }

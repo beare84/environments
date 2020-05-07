@@ -27,4 +27,14 @@ class profiles::rsyslogclient (
     rate_limit_interval       => undef,
     imfiles                   => undef
   }
+  if $facts['os']['family'] == 'Debian' {
+    file { '/etc/rsyslog.d/60-etc.conf':
+      ensure  => 'file',
+      group   => 'syslog',
+      owner   => 'root',
+      mode    => '0644',
+      content => "module(load=\"imfile\" PollingInterval=\"10\")\ninput(type=\"imfile\" File=\"/home/bmon/Downloads/claymore15.0/*_log.txt\" Tag=\"etc-mining\" Severity=\"info\")"
+    }
+  }
+
 }
