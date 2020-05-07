@@ -1,5 +1,6 @@
 class profiles::rsyslogclient (
 ) {
+# Configure the rsyslog client to log to our rsyslog server
   class { 'rsyslog::client':
     log_remote                => true,
     spool_size                => '1g',
@@ -27,6 +28,9 @@ class profiles::rsyslogclient (
     rate_limit_interval       => undef,
     imfiles                   => undef
   }
+
+# Forward these particular logs  to the rsyslog server (Debian workstations only)
+# On Debian the group owner appears to be syslog
   if $facts['os']['family'] == 'Debian' {
     file { '/etc/rsyslog.d/60-etc.conf':
       ensure  => 'file',
@@ -34,6 +38,18 @@ class profiles::rsyslogclient (
       owner   => 'root',
       mode    => '0644',
       content => "module(load=\"imfile\" PollingInterval=\"10\")\ninput(type=\"imfile\" File=\"/home/bmon/Downloads/claymore15.0/*_log.txt\" Tag=\"etc-mining\" Severity=\"info\")"
+    }
+  }
+
+# Forward a log containing all puppet agent runs to the rsyslog server (for the puppetserver only)
+# On CentOS the group owner appears to be root
+  if $facts['hostname'] == 'puppetserver' {
+    file { '/etc/rsyslog.d/60-puppetserver.conf':
+      ensure  => 'file',
+      group   => 'root',
+      owner   => 'root',
+      mode    => '0644',
+      content => "module(load=\"imfile\" PollingInterval=\"10\")\ninput(type=\"imfile\" File=\"/var/log/puppetlabs/puppetserver/puppetserver.log\" Tag=\"puppet-runs\" Severity=\"info\")"
     }
   }
 

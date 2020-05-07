@@ -1,8 +1,8 @@
 class profiles::splunkenterprise (
 ) {
-
-  # In the Splunk Web UI you can point Splunk to look for logs from a directory.
-  # If the Splunk Enterprise server is also a rsyslog server it can get client logs from here.
+  # In the Splunk Web UI you can point Splunk to look for logs from a directory (Settings > Data Inputs > Files anmd Directories).
+  # My Splunk Enterprise server is also my rsyslog server so it can get all client logs from /srv/log
+  # You'll also need to activate the Free licence as Splunk comes installed with trial licence (Setting > Licening > Change Licence Group > Free Licence)
 
   # The below code changes the admin user's password to 'password'
   # I generated this hash on a splunk enterprise server using:

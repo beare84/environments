@@ -2,6 +2,8 @@ class profiles::linuxbase (
   Array $apps     = ['nc', 'bind-utils', 'vim', 'chrony', 'openssh-server', 'yum-cron'],
   Array $services = ['sshd', 'chronyd', 'yum-cron'],
 ) {
+# This profile does some standard config that I like to have on my linux hosts
+# including enabling selinux, installing vim, yum-cron, opening sshd etc.
   package { $apps:
     ensure => 'installed',
   }
