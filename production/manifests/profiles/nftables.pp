@@ -34,7 +34,7 @@ class profiles::nftables (
     out_icmp         => false,
     out_ntp          => false,
     rules            => $nftables_rules_real,
-    firewalld_enable => false,
+    # firewalld_enable => false,
   }
 
 }
