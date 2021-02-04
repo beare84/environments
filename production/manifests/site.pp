@@ -4,9 +4,9 @@ node 'default' {
 }
 
 node 'puppetserver' {
-  include profiles::linuxbase
+  #include profiles::linuxbase
   include profiles::rsyslogclient
-  include profiles::puppetserver
+  #include profiles::puppetserver
   include profiles::nftables
 }
 
