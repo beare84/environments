@@ -5,7 +5,7 @@ class profiles::nftables (
 ) {
   $nftables_inbound_defaults = {}
 
-  $nftables_rules_inbound = {}
+  # $nftables_rules_inbound = {}
 
   $nftables_rules_inbound = {
     'default_in-puppet' => {
