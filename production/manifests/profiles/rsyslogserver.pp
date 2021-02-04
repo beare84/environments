@@ -47,7 +47,7 @@ class profiles::rsyslogserver (
   exec { 'chcon-srv-log':
     path        => '/usr/bin',
     command     => '/usr/bin/chcon --reference /var/log /srv/log',
-    subscribe   => File['srv/log'],
+    subscribe   => File['/srv/log'],
     refreshonly => true,
   }
 
