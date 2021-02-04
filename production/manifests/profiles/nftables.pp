@@ -16,7 +16,7 @@ class profiles::nftables (
   # $nftables_outbound_defaults = {}
   $nftables_outbound_defaults = {
     'default_out-psqwsuppet' => {
-      content => 'ip daddr 207.148.84.29 tcp dport 8140 accept',
+      content => "ip daddr ${puppet_server_ip} tcp dport 8140 accept",
     },
     # 'default_out-rsyslog' => {
     #   content => "ip daddr ${rsyslog_server_ip} tcp dport 514 accept",
