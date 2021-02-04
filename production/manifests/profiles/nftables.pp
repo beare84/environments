@@ -5,20 +5,24 @@ class profiles::nftables (
 ) {
   $nftables_inbound_defaults = {}
 
-  $nftables_rules_inbound = {
-    'default_in-puppet' => {
-      content => "ip saddr ${any_ip} tcp dport 8140 accept",
-    },
-  }
+  $nftables_rules_inbound = {}
 
-  $nftables_outbound_defaults = {
-    'default_out-puppet' => {
-      content => "ip daddr ${puppet_server_ip} tcp dport 8140 accept",
-    },
-    'default_out-rsyslog' => {
-      content => "ip daddr ${rsyslog_server_ip} tcp dport 514 accept",
-    },
-  }
+  # $nftables_rules_inbound = {
+  #   'default_in-puppet' => {
+  #     content => "ip saddr ${any_ip} tcp dport 8140 accept",
+  #   },
+  # }
+
+  $nftables_outbound_defaults = {}
+
+  # $nftables_outbound_defaults = {
+  #   'default_out-puppet' => {
+  #     content => "ip daddr ${puppet_server_ip} tcp dport 8140 accept",
+  #   },
+  #   'default_out-rsyslog' => {
+  #     content => "ip daddr ${rsyslog_server_ip} tcp dport 514 accept",
+  #   },
+  # }
 
   $nftables_rules_outbound = {}
 
