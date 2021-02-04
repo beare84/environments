@@ -7,7 +7,7 @@ class profiles::nftables (
 
   $nftables_rules_inbound = {
     'default_in-puppet' => {
-      content => "ip daddr ${$any_ip} tcp dport 8140 accept",
+      content => "ip saddr ${$any_ip} tcp dport 8140 accept",
     },
   }
   $nftables_outbound_defaults = {
