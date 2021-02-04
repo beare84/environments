@@ -1,11 +1,5 @@
 class profiles::rsyslogserver (
 ) {
-  # Note, you will need to run the below otherwise rsyslog will fail to run.
-  # This is due to selinux being in enforcing mode (as it should)
-  # When you make /srv/log it wont have the right context for rsyslog to write to.
-  # mkdir /srv/log
-  # chcon --reference /var/log /srv/log
-
   class { 'rsyslog::server':
     enable_tcp                => true,
     enable_udp                => false,
@@ -37,4 +31,24 @@ class profiles::rsyslogserver (
     },
     action => 'accept',
   }
+
+  # Note, you will need to run the below otherwise rsyslog will fail to run.
+  # This is due to selinux being in enforcing mode (as it should)
+  # When you make /srv/log it wont have the right context for rsyslog to write to.
+  # mkdir /srv/log
+  # chcon --reference /var/log /srv/log
+  file { '/srv/log':
+    ensure => 'directory',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0700',
+    notify => Exec['chcon-srv-log'],
+  }
+  exec { 'chcon-srv-log':
+    path        => '/usr/bin',
+    command     => '/usr/bin/chcon --reference /var/log /srv/log',
+    subscribe   => File['srv/log'],
+    refreshonly => true,
+  }
+
 }
