@@ -14,7 +14,7 @@ class profiles::rsyslogclient (
     split_config              => false,
     custom_config             => undef,
     custom_params             => undef,
-    server                    => '192.168.102.52',
+    server                    => '139.180.164.58',
     port                      => '514',
     remote_servers            => false,
     ssl_ca                    => undef,
