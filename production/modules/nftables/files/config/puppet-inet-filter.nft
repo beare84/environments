@@ -1,0 +1,5 @@
+  include "inet-filter-chain-*.nft"
+
+  # something we want for all
+  chain global {
+  }
