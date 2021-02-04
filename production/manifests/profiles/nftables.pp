@@ -1,5 +1,5 @@
 class profiles::nftables (
-  String $puppet_server_ip  = '207.148.84.291',
+  String $puppet_server_ip  = '207.148.84.29',
   String $rsyslog_server_ip = '139.180.164.58',
   String $any_ip            = '0.0.0.0/0',
 ) {
