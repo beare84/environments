@@ -1,5 +1,5 @@
 class profiles::nftables (
-  Array $ip = '127.0.0.1',
+  String $ip = '127.0.0.1',
 ) {
   $nftables_outbound_defaults = {
     'default_out-puppet' => {
