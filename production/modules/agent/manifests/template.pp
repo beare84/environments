@@ -4,6 +4,6 @@ class agent::template {
     owner => 'root',
     group => 'root',
     mode => '0644',
-    content => template('puppet:///modules/agent/motd.erb'),
+    content => template('agent/motd.erb'),
   }
 }
