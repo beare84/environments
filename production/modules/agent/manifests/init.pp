@@ -6,7 +6,6 @@ class agent {
     source => 'puppet:///modules/agent/agent.sh',
   }
 
-  package { 'vim':
-    ensure => 'latest',
-  }
+  include agent::vim
+
 }
