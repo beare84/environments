@@ -5,4 +5,8 @@ class agent {
     mode => '0700',
     source => 'puppet:///modules/agent/agent.sh',
   }
+
+  package { 'vim':
+    ensure => 'latest',
+  }
 }

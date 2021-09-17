@@ -6,5 +6,5 @@ node default {
     #   content => "\nAll Hail the Knife Crab",
     # }
   class { 'agent': }
-  class { 'agent::other': }
+  # class { 'agent::other': }
 }
