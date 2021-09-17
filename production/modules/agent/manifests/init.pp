@@ -6,6 +6,11 @@ class agent {
     source => 'puppet:///modules/agent/agent.sh',
   }
 
+  service { 'puppet':
+    ensure => 'running',
+    enabled => true,
+  }
+
   include agent::vim
   include agent::apache
   include agent::template
