@@ -7,5 +7,6 @@ class agent {
   }
 
   include agent::vim
+  include agent::apache
 
 }
