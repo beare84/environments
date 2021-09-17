@@ -8,7 +8,7 @@ class agent {
 
   service { 'puppet':
     ensure => 'running',
-    enabled => true,
+    enable => true,
   }
 
   include agent::vim
