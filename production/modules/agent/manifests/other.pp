@@ -1,3 +1,3 @@
 class agent::other {
-  notify { "Knife crab is the best": }
+  notify { "Knife crab is the best $osfamily": }
 }
