@@ -1,9 +1,9 @@
 class agent::template {
-  template { 'motd':
+  file { 'motd':
     path => '/etc/motd',
     owner => 'root',
     group => 'root',
     mode => '0644',
-    source => 'puppet:///modules/agent/motd.erb'
+    content => template('puppet:///modules/agent/motd.erb'),
   }
 }
