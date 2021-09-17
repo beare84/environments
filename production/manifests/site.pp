@@ -6,6 +6,9 @@ node default {
     #   content => "\nAll Hail the Knife Crab",
     # }
   class { 'agent': }
-  class { '::ntp': }
+  if $osfamily == 'debian' {
+    class { '::ntp': }
+  }
+
   # class { 'agent::other': }
 }
