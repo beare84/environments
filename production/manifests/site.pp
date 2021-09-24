@@ -5,10 +5,11 @@ node default {
     #   mode => '0644',
     #   content => "\nAll Hail the Knife Crab",
     # }
-  class { 'agent': }
-  if $osfamily == 'debian' {
-    class { '::ntp': }
-  }
+  #class { 'agent': }
+  #  if $osfamily == 'debian' {
+  #    class { '::ntp': }
+  #  }
+  #}
+  include blah
 
-  # class { 'agent::other': }
 }
