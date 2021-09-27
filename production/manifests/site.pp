@@ -1,5 +1,6 @@
 node default {
-  include ntp
+  include blah
+  # include ntp
   # Class { 'ntp': 
 
   # }
