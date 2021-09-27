@@ -1,4 +1,4 @@
 ---
 apache::install_ensure: 'present'
 apache::install_name: 'apache2'
-apache::config::ensure: 'file'
+apache::config_ensure: 'file'
