@@ -5,4 +5,10 @@
 # @example
 #   include apache::service
 class apache::service {
+  service { "${apache::service_name}":
+    ensure     => $apache::service_ensure
+    ensure     => $apache::service_enable
+    hasrestart => true,
+    
+  }
 }

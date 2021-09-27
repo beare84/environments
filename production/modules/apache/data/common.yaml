@@ -2,3 +2,5 @@
 apache::install_ensure: 'present'
 apache::install_name: 'apache2'
 apache::config_ensure: 'file'
+apache::service_enable: true
+apache::service_ensure: 'running'
