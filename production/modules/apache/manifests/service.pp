@@ -5,10 +5,18 @@
 # @example
 #   include apache::service
 class apache::service {
+
+  # schedule { 'everyday':
+  #   period => 'daily',
+  #   range => "1-6",
+  # }
+
   service { "${apache::service_name}":
     ensure     => $apache::service_ensure
     ensure     => $apache::service_enable
     hasrestart => true,
-    
+    # subscribe  => File['apache_config'],
+    # schedule => 'everyday',
   }
+
 }
