@@ -13,7 +13,7 @@ class apache::service {
 
   service { "${apache::service_name}":
     ensure     => $apache::service_ensure,
-    ensure     => $apache::service_enable,
+    enable     => $apache::service_enable,
     hasrestart => true,
     # subscribe  => File['apache_config'],
     # schedule => 'everyday',
