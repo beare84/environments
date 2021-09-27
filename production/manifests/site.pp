@@ -1,4 +1,9 @@
 node default {
+  include ntp
+  # Class { 'ntp': 
+
+  # }
+    
     # file { '/etc/motd':
     #   owner => 'root',
     #   group => 'root',
@@ -10,6 +15,6 @@ node default {
   #    class { '::ntp': }
   #  }
   #}
-  include blah
+  # include blah
 
 }
