@@ -5,4 +5,15 @@
 # @example
 #   include apache::params
 class apache::params {
+  $install_ensure = 'present'
+  if $::osfamily {
+    'Redhat': {
+      $install_name = 'httpd'
+    }
+  }
+  elsif $::osfamily {
+    'Debian': {
+      $install_name = 'apache2'
+    }
+  }
 }
