@@ -4,3 +4,12 @@ apache::install_name: 'apache2'
 apache::config_ensure: 'file'
 apache::service_enable: true
 apache::service_ensure: 'running'
+
+
+apache::config_path: '/etc/httpd/conf/httpd.conf'
+apache::service_name: 'httpd'
+apache::vhosts_dir: '/etc/httpd/conf.d'
+apache::vhosts_owner: 'apache'
+apache::vhosts_group: 'apache'
+
+
