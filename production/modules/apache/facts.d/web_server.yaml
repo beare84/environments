@@ -1,4 +1,5 @@
 ---
+# eg facter -p web.blah
 web:
   server: Apache
   blah: woot
