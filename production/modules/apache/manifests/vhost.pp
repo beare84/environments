@@ -27,6 +27,6 @@ define apache::vhost (
       'docroot'   => $docroot,
     }),
     # notify  => Service['apache_service'],
-    notify  => Service ["${apache::service_name}"],
+    notify => Service["${apache::service_name}"],
   }
 }
