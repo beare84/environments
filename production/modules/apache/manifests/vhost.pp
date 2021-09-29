@@ -20,7 +20,7 @@ define apache::vhost (
     owner   => $apache::vhosts_owner,
     group   => $apache::vhosts_group,
     mode    => '0644',
-    content => epp('vhost.conf.epp', {
+    content => epp('apache/vhost.conf.epp', {
       'port'      => $port,
       'subdomain' => $subdomain,
       'admin'     => $admin,
