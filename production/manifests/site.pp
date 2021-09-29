@@ -1,5 +1,12 @@
 node default {
   include apache
+
+  apache::vhosts { 'puppet_project':
+    port      => 80,
+    subdomain => 'puppetproject',
+    admin     => 'admin@mylabserver.com',
+    docroot   => '/var/www/html/puppetproject',
+  }
   # include ntp
   # Class { 'ntp': 
 
