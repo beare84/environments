@@ -15,5 +15,5 @@ describe 'apache' do
   when 'RedHat'
     it { is_expected.to contain_package('httpd').with(ensure: 'present') }
     it { is_expected.to contain_service('httpd').with(ensure: 'runnning', enable: true, hasrestart: true ) }
-  }
+  end
 end
