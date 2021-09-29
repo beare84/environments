@@ -26,6 +26,7 @@ define apache::vhost (
       'admin'     => $admin,
       'docroot'   => $docroot,
     }),
-    notify  => Service['apache_service'],
+    # notify  => Service['apache_service'],
+    notify  => Service ["${apache::service_name}"],
   }
 }
