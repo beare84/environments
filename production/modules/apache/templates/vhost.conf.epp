@@ -1,7 +1,7 @@
 <%# A comment -%>
 <VirtualHost *:<%= $port %>>
     Servername <%= $subdomain %>.<%= $facts[fqdn] %>
-    ServeAlias <%= $subdomain %>
+    ServerAlias <%= $subdomain %>
 <% if $admin =~ String[1] { %>
     ServerAdmin <%= $admin %>
 <% } %>
