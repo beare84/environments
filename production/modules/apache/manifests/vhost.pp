@@ -5,7 +5,7 @@
 # @example
 #   apache::vhost { 'namevar': }
 define apache::vhost (
-  Integer   $port.
+  Integer   $port,
   String[1] $subdomain,
   String    $admin,
   String[1] $docroot,
