@@ -7,9 +7,10 @@ node puppetenterpriseagent {
     admin     => 'admin@mylabserver.com',
     docroot   => '/var/www/html/puppetproject',
   }
+}
 
 node puppetenterprisemaster {
-  
+
 }
   # include ntp
   # Class { 'ntp': 
@@ -28,5 +29,3 @@ node puppetenterprisemaster {
   #  }
   #}
   # include blah
-
-}
