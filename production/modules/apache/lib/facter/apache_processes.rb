@@ -1,5 +1,5 @@
 Facter.add(:apache_processes) do
-  context :kernel => "Linux"
+#   context :kernel => "Linux"
   setcode do
     osfamily = Facter.value(:osfamily)
     case osfamily
