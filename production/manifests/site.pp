@@ -1,4 +1,4 @@
-node puppetenterpriseagent {
+node puppet* {
   include apache
 
   apache::vhost { 'puppet_project':
