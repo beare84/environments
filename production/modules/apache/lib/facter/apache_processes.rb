@@ -6,7 +6,7 @@ Facter.add(:apache_processes) do
     when 'Debian'
       Facter::Core::Execution.execute('pgrep apache2 | wc -l')
     when 'RedHat'
-      Facter::Core::Execution.execute('pgrep httpd | wc -l')
+      Facter::Core::Execution.execute('ps -aux | grep httpd | wc -l')
     end
   end
 end
