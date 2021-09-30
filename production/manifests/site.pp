@@ -1,5 +1,7 @@
 node puppetenterpriseagent {
-  include apache
+  # include apache
+
+  include role::lamp
 
   apache::vhost { 'puppet_project':
     port      => 80,
