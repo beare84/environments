@@ -1,5 +1,5 @@
 node puppetenterpriseagent {
-  # include apache
+  include apache
 
   include role::lamp
 
