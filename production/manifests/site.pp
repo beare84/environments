@@ -1,3 +1,6 @@
+node default {
+  
+}
 # node puppetenterpriseagent {
 #   # include apache
 
