@@ -1,15 +1,15 @@
-node puppetenterpriseagent {
-  # include apache
+# node puppetenterpriseagent {
+#   # include apache
 
-  include role::lamp
+#   include role::lamp
 
-  apache::vhost { 'puppet_project':
-    port      => 80,
-    subdomain => 'puppetproject',
-    admin     => 'admin@mylabserver.com',
-    docroot   => '/var/www/html/puppetproject',
-  }
-}
+#   apache::vhost { 'puppet_project':
+#     port      => 80,
+#     subdomain => 'puppetproject',
+#     admin     => 'admin@mylabserver.com',
+#     docroot   => '/var/www/html/puppetproject',
+#   }
+# }
 
 node puppetenterprisemaster {
 
